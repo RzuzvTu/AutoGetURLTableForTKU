@@ -1,0 +1,52 @@
+{
+  "sites": [
+    {
+      "name": "範例網站1",
+      "url": "https://example.com/news",
+      "container_selector": "#content tbody tr",
+      "excel_file": "data/example1.xlsx",
+      "enabled": true,
+      "table_mode": true,
+      "auto_pagination": true,
+      "max_pages": 10,
+      "pagination": {
+        "page_param": "pg",
+        "spid_required": false
+      }
+    },
+    {
+      "name": "範例網站2",
+      "url": "https://example.com/events",
+      "container_selector": ".news-list-item",
+      "excel_file": "data/example2.xlsx",
+      "enabled": true,
+      "table_mode": false,
+      "auto_pagination": true,
+      "max_pages": 5,
+      "pagination": {
+        "page_param": "page",
+        "spid_required": false
+      }
+    }
+  ],
+  "headers": {
+    "User-Agent": "TKU-Sprout-Monitor/2.2 (+https://github.com/your-repo/or-contact-email)",
+    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+    "Accept-Language": "zh-TW,zh;q=0.9,en;q=0.8",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Upgrade-Insecure-Requests": "1",
+    "Cache-Control": "max-age=0"
+  },
+  "settings": {
+    "timeout": 15,
+    "delay_between_pages": 2,
+    "delay_between_sites": 3,
+    "log_file": "data/monitor.log",
+    "log_level": "INFO",
+    "max_response_size": 10485760,
+    "data_dir": "data",
+    "max_concurrent_sites": 5,
+    "rate_limit_delay": 1.0
+  }
+}
