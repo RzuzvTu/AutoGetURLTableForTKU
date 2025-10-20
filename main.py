@@ -71,25 +71,7 @@ def load_simple_config() -> Optional[Dict[Any, Any]]:
         config_path = Path(config_path_str)
         if not config_path.exists():
             logger.error("找不到 config.json 檔案")
-            logger.error("請建立 config.json，範例：")
-            print('''{
-  "sites": [
-    {
-      "name": "測試網站",
-      "url": "https://example.com",
-      "container_selector": "#content tbody tr",
-      "excel_file": "data/test.xlsx",
-      "enabled": true,
-      "table_mode": true,
-      "auto_pagination": true,
-      "max_pages": 5,
-      "pagination": {
-        "page_param": "pg",
-        "spid_required": true
-      }
-    }
-  ]
-}''')
+
             return None
         
         with open(config_path, 'r', encoding='utf-8') as f:
@@ -361,7 +343,7 @@ def monitor_site(site_config: Dict[str, Any], crawler: WebCrawler) -> List[Dict]
         return []
 
 def main() -> None:
-    """主程式入口（單次執行）"""
+
     logger.info("系統啟動")
     logger.info("=" * 70)
     
